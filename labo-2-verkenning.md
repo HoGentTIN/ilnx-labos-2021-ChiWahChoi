@@ -258,7 +258,7 @@ In deze oefening leer je onderscheid maken tussen *relatieve* en *absolute paden
 
     ```
     [chichoi@localhost linux]$ rm -r c
-    UITVOER
+    UITVOER: /
     ```
 
 9. Maak met één commando deze directorystructuur aan. Het is de bedoeling de opdrachtregel zo kort mogelijk te maken, dus niet alle directories apart opgeven!
@@ -285,37 +285,37 @@ Behoud deze directorystructuur voor de volgende oefeningen over bestanden.
 1. Maak een leeg bestand aan met de naam `file1`
 
     ```
-    $ touch file1
+    [chichoi@localhost linux]$ touch file1
     UITVOER: /
     ```
 
 2. Maak een *verborgen* bestand aan met de naam `hidden`. Verborgen betekent dat je het niet kan zien met een "gewone" `ls`, maar wel met de gepaste optie.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ touch .hidden
+    UITVOER: /
     ```
 
 3. Tik volgend commando in, leg uit wat er hier precies gebeurt, wat het effect is.
 
     ```
-    $ echo hello world > file2
+    [chichoi@localhost ~]$ echo hello world > file2
     ```
 
-    **Antwoord:** 
+    **Antwoord: De output van echo werd weggeschreven naar file2.** 
 
 4. Toon de inhoud van `file2`
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ cat file2
+    Hello world
     ```
 
 5. Kopieer `file1` naar een nieuw bestand `file3` in de huidige directory
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ cp file1 file3
+    UITVOER: /
     ```
 
 6. Kopieer `file1` naar de directory `f/` (die zou je nog moeten hebben van vorige oefening)
