@@ -221,9 +221,10 @@ In deze oefening leer je onderscheid maken tussen *relatieve* en *absolute paden
 5. Maak met één commando de subdirectory `a/b/` aan onder `linux/`. Als je nadien het commando `tree` geeft, moet je de gegeven uitvoer zien.
 
     ```
-    $ mkdir -p a/b
+    [chichoi@localhost linux]$ mkdir -p a/b
     UITVOER: /
-    $ tree
+    
+    [chichoi@localhost linux]$ tree
     .
     └── a
         └── b
@@ -233,18 +234,19 @@ In deze oefening leer je onderscheid maken tussen *relatieve* en *absolute paden
 6. Verwijder directory `b/` en daarna `a/` (in twee commando's)
 
     ```
-    $ rmdir a/b
+    [chichoi@localhost linux]$ rmdir a/b
     UITVOER: /
-    $ rmdir a
+    [chichoi@localhost linux]$ rmdir a
     UITVOER: /
     ```
 
 7. Maak met één commando deze directorystructuur aan.
 
     ```
-    $ COMMANDO
-    UITVOER
-    $ tree
+    [chichoi@localhost linux]$ mkdir -p c/{d,e}
+    UITVOER: /
+    
+    [chichoi@localhost linux]$ tree
     .
     └── c
         ├── d
@@ -255,7 +257,7 @@ In deze oefening leer je onderscheid maken tussen *relatieve* en *absolute paden
 8. Verwijder in één commando de directory `c/` en alle onderliggende
 
     ```
-    $ COMMANDO
+    [chichoi@localhost linux]$ rm -r c
     UITVOER
     ```
 
