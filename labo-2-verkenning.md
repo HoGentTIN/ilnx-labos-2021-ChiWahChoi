@@ -193,36 +193,36 @@ In deze oefening leer je onderscheid maken tussen *relatieve* en *absolute paden
 1. Blijf in je home-directory en maak van hieruit een directory `tijdelijk/` aan onder `/tmp/`
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ mkdir /tmp/tijdelijk
+    UITVOER: /
     ```
 
 2. Verwijder deze directory meteen
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ rmdir /tmp/tijdelijk
+    UITVOER: /
     ```
 
 3. Maak onder je home-directory een submap aan met de naam `linux/`
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ mkdir linux
+    UITVOER: /
     ```
 
 4. Ga naar deze directory
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ cd linux/
+    UITVOER: /
     ```
 
 5. Maak met één commando de subdirectory `a/b/` aan onder `linux/`. Als je nadien het commando `tree` geeft, moet je de gegeven uitvoer zien.
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ mkdir -p a/b
+    UITVOER: /
     $ tree
     .
     └── a
@@ -233,8 +233,10 @@ In deze oefening leer je onderscheid maken tussen *relatieve* en *absolute paden
 6. Verwijder directory `b/` en daarna `a/` (in twee commando's)
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ rmdir a/b
+    UITVOER: /
+    $ rmdir a
+    UITVOER: /
     ```
 
 7. Maak met één commando deze directorystructuur aan.
