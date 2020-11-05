@@ -386,8 +386,8 @@ Behoud deze directorystructuur voor de volgende oefeningen over bestanden.
 11. Kopieer `f/h/`, inclusief de inhoud, naar een nieuwe directory `f/j/`
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost linux]$ cp -r f/h/ f/j/
+    UITVOER: /
     ```
 
 ### Pathname expansion (of *file globbing*)
