@@ -28,28 +28,28 @@
 1. Wat is de huidige datum en uur?
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ date
+    Thu 05 Nov 2020 05:21:41 PM CET
     ```
 
 2. Wat is de huidige directory?
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ pwd
+    /home/chichoi
     ```
 
 3. Toon de inhoud van de huidige directory. De uitvoer zou er ongeveer zo moeten uit zien:
 
     ```
-    $ COMMANDO
+    $ ls
     Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
     ```
 
 4. Toon de inhoud van de huidige directory, maar toon voor elk bestand meer informatie en ook "verborgen" bestanden.
 
     ```
-    $ COMMANDO
+    $ ls -al
     total 96
     drwx------. 14 student student 4096 Sep 24 09:14 .
     drwxr-xr-x.  3 root    root    4096 Sep 20 13:46 ..
