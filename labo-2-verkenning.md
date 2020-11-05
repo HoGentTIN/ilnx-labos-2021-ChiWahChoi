@@ -169,13 +169,13 @@ Vul de tabel hieronder aan. In de linkerkolom vind je de namen van een directory
 | `/opt`, `/usr/local`              | Software die geïnstalleerd werd buiten de packetmanager |
 | `/root`                           | Home-directory van de `root` gebruiker                  |
 | `/home/student`                   | Home-directory van de gebruiker `student`               |
-| **`ANTWOORD`**                    | De inhoud van de man-pages                              |
-| **`ANTWOORD`**                    | Andere documentatie                                     |
-| `/lib`, `/usr/lib`, `lib64`, enz. | **ANTWOORD**                                            |
-| **`ANTWOORD`**                    | De inhoud van de installatie-cd voor Guest Additions(*) |
-| `/dev`                            | **ANTWOORD**                                            |
-| `/proc`                           | **ANTWOORD**                                            |
-| **`ANTWOORD`**                    | Systeemconfiguratiebestanden                            |
+| `/usr/share/man`                  | De inhoud van de man-pages                              |
+| `/usr/share/dat`                  | Andere documentatie                                     |
+| `/lib`, `/usr/lib`, `lib64`, enz. | Gedeelde bibliotheken                                   |
+| `/run/media/student               | De inhoud van de installatie-cd voor Guest Additions(*) |
+| `/dev`                            | Apparaatbestande                                        |
+| `/proc`                           | Kernel-informatie                                       |
+| `/etc`                            | Systeemconfiguratiebestanden                            |
 
 (*) Je kan het insteken van de cd simuleren in het VirtualBox-venster van je VM in het menu "Devices" > "Insert Guest Additions CD image..." (of het Nederlandstalige equivalent).
 
