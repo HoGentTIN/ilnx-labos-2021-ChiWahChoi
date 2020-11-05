@@ -455,17 +455,32 @@ Maak in de directory `linux/` twee tekstbestanden aan, met naam `tekst1a` en `te
 1. Voor het volgende commando uit en geef de uitvoer:
 
     ```
-    $ ls -l tekst*
-    UITVOER
+    [chichoi@localhost linux]$ ls -l tekst*
+    -rw-rw-r--. 1 chichoi chichoi 22 Nov  5 19:02 tekst1a
+    -rw-rw-r--. 1 chichoi chichoi 22 Nov  5 19:03 tekst2a
     ```
 
 2. Maak een *harde link* aan met naam `tekst1b` die verwijst naar bestand `tekst1a`
+
+    ```
+    [chichoi@localhost linux]$ ln tekst1a tekst1b
+    UITVOER: /
+    ```
+
 3. Maak een *symbolische link* aan met naam `tekst2b` die verwijst naar bestand `tekst2a`
+
+    ```
+    [chichoi@localhost linux]$ ln -s tekst2a tekst2b
+    UITVOER: /
+    ```
 4. Voor het volgende commando uit en geef de uitvoer:
 
     ```
     $ ls -l tekst*
-    UITVOER
+    -rw-rw-r--. 2 chichoi chichoi 22 Nov  5 19:02 tekst1a
+    -rw-rw-r--. 2 chichoi chichoi 22 Nov  5 19:02 tekst1
+    -rw-rw-r--. 1 chichoi chichoi 22 Nov  5 19:03 tekst2a
+    lrwxrwxrwx. 1 chichoi chichoi  7 Nov  5 19:09 tekst2b -> tekst2a
     ```
 
 5. Hoe zie je aan de uitvoer van `ls` dat `tekst1b` een harde link is en `tekst2b` een symbolische? Tip: Vergelijk met de uitvoer uit vraag 1!
