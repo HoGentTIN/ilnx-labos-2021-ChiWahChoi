@@ -476,7 +476,7 @@ Maak in de directory `linux/` twee tekstbestanden aan, met naam `tekst1a` en `te
 4. Voor het volgende commando uit en geef de uitvoer:
 
     ```
-    $ ls -l tekst*
+    [chichoi@localhost linux]$ ls -l tekst*
     -rw-rw-r--. 2 chichoi chichoi 22 Nov  5 19:02 tekst1a
     -rw-rw-r--. 2 chichoi chichoi 22 Nov  5 19:02 tekst1
     -rw-rw-r--. 1 chichoi chichoi 22 Nov  5 19:03 tekst2a
@@ -497,7 +497,7 @@ Maak in de directory `linux/` twee tekstbestanden aan, met naam `tekst1a` en `te
 7. Toon opnieuw de uitvoer van `ls -l tekst*`, en bekijk de inhoud van `tekst1b` en `tekst2b`. Wat valt je op?
 
     ```
-    $ ls -l tekst*
+    [chichoi@localhost linux]$ ls -l tekst*
     -rw-rw-r--. 1 chichoi chichoi 22 Nov  5 19:02 tekst1b
     lrwxrwxrwx. 1 chichoi chichoi  7 Nov  5 19:09 tekst2b -> tekst2a
     ```
