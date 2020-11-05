@@ -136,18 +136,24 @@
     ```
 
 6. Wat betekenen volgende elementen van de uitvoer hierboven?
-    - 1e kolom (bv. `drwxr-xr-x.`): ...
-    - 2e kolom (getal): ...
-    - 3e kolom (bv. `root`, `student`): ...
-    - 4e kolom (bv. `root`): ...
-    - 5e kolom (getal): ...
-    - 6e - 8e kolom (datum): ...
-    - de aanduiding `->` (bv. `bin -> usr/bin`): ...
+    - 1e kolom (bv. `drwxr-xr-x.`): bestandpermissies
+    - 2e kolom (getal): aantal hard links
+    - 3e kolom (bv. `root`, `student`): bestandseigenaar
+    - 4e kolom (bv. `root`): gebruikersgroep
+    - 5e kolom (getal): bestandsgrootte in bytes
+    - 6e - 8e kolom (datum): datum van de laatste wijziging
+    - de aanduiding `->` (bv. `bin -> usr/bin`): symbolische link
 7. Hoe kan je commando's die je voordien uitgevoerd hebt terug ophalen (de "commandogeschiedenis")?
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ history
+    1  man hier
+    2  man builtins
+    3  man 7 glo
+    4  man passwd
+    5  man -k passwd
+    6  q
+    7  pwd
     ```
 
 ## De plaats van bestanden op een Linux-systeem
