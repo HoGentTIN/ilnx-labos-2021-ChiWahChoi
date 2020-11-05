@@ -25,14 +25,44 @@
 
     ```
     $ man 5 passwd
-    UITVOER
+    PASSWD(5)                  Linux Programmer's Manual                 PASSWD(5)
+    
+    NAME
+       passwd - password file
+
+    DESCRIPTION
+       The  /etc/passwd file is a text file that describes user login accounts
+       for the system.  It should have read permission allowed for  all  users
+       (many  utilities,  like ls(1) use it to map user IDs to usernames), but
+       write access only for the superuser.
+       [...]
     ```
 
 3. Hoe vraag je een lijst op van alle documentatie die de string `passwd` bevat?
 
     ```
     $ apropos passwd OF man -k passwd
-    UITVOER
+    chgpasswd (8)        - update group passwords in batch mode
+    chpasswd (8)         - update passwords in batch mode
+    fgetpwent_r (3)      - get passwd file entry reentrantly
+    getpwent_r (3)       - get passwd file entry reentrantly
+    gpasswd (1)          - administer /etc/group and /etc/gshado
+    grub2-mkpasswd-pbkdf2 (1) - Generate a PBKDF2 password hash.
+    htpasswd (1)         - Manage user files for basic authentication
+    lpasswd (1)          - Change group or user password
+    mkpasswd (1)         - Overfeatured front end to crypt(3)
+    openssl-passwd (1ssl) - compute password hashes
+    pam_localuser (8)    - require users to be listed in /etc/passwd
+    pam_passwdqc (8)     - Password quality-control PAM module
+    passwd (1)           - update user's authentication tokens
+    passwd (5)           - password file
+    passwd2des (3)       - RFS password encryption
+    passwdqc.conf (5)    - libpasswdqc configuration file
+    pwhistory_helper (8) - Helper binary that transfers password hashes from pass...
+    saslpasswd2 (8)      - set a user's sasl password
+    smbpasswd (5)        - The Samba encrypted password file
+    sslpasswd (1ssl)     - compute password hashes
+    vncpasswd (1)        - change the VNC password
     ```
 
 ## Werken op de command-line
