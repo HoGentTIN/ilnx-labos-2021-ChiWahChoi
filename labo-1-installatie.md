@@ -60,5 +60,5 @@ Installeer optioneel de “VirtualBox Guest Additions” (zie procedure in de st
 
 Beschrijf hier de exacte procedure hoe je dit uitgevoerd hebt. Zorg er voor dat je aan de hand van je beschrijving deze taken later heel vlot kan herhalen als dat nodig is.
 
-1. ...
+1. sudo dnf install [Arguments]
 
