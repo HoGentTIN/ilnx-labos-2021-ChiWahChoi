@@ -292,14 +292,14 @@ Behoud deze directorystructuur voor de volgende oefeningen over bestanden.
 2. Maak een *verborgen* bestand aan met de naam `hidden`. Verborgen betekent dat je het niet kan zien met een "gewone" `ls`, maar wel met de gepaste optie.
 
     ```
-    [chichoi@localhost ~]$ touch .hidden
+    [chichoi@localhost linux]$ touch .hidden
     UITVOER: /
     ```
 
 3. Tik volgend commando in, leg uit wat er hier precies gebeurt, wat het effect is.
 
     ```
-    [chichoi@localhost ~]$ echo hello world > file2
+    [chichoi@localhost linux]$ echo hello world > file2
     ```
 
     **Antwoord: De output van echo werd weggeschreven naar file2.** 
@@ -307,30 +307,31 @@ Behoud deze directorystructuur voor de volgende oefeningen over bestanden.
 4. Toon de inhoud van `file2`
 
     ```
-    [chichoi@localhost ~]$ cat file2
+    [chichoi@localhost linux]$ cat file2
     Hello world
     ```
 
 5. Kopieer `file1` naar een nieuw bestand `file3` in de huidige directory
 
     ```
-    [chichoi@localhost ~]$ cp file1 file3
+    [chichoi@localhost linux]$ cp file1 file3
     UITVOER: /
     ```
 
 6. Kopieer `file1` naar de directory `f/` (die zou je nog moeten hebben van vorige oefening)
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost linux]$ cp file1 f/
+    UITVOER: /
     ```
 
 7. Kopieer `file1` en file2 in één keer naar `f/g/`. Je zou de gegeven situatie moeten krijgen.
 
     ```
-    $ COMMANDO
-    UITVOER
-    $ tree
+    [chichoi@localhost linux]$ cp {file1,file2} f/g/
+    UITVOER: /
+    
+    [chichoi@localhost linux]$ tree
     .
     ├── f
     │   ├── file1
@@ -348,23 +349,24 @@ Behoud deze directorystructuur voor de volgende oefeningen over bestanden.
 8. *Hernoem* `file3` naar `file4`
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost linux]$ mv file3 file4
+    UITVOER: /
     ```
 
 9. Verplaats `file2` naar directory `f/`
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost linux]$ mv file2 f/
+    UITVOER: /
     ```
 
 10. Verplaats `file1` en `file4` in één keer naar `f/h/`. Je zou de gegeven situatie moeten krijgen.
 
     ```
-    $ COMMANDO
-    UITVOER
-    $ tree
+    [chichoi@localhost linux]$ mv {file1,file4} f/h/
+    UITVOER: /
+    
+    [chichoi@localhost linux]$ tree
     .
     └── f
         ├── file1
