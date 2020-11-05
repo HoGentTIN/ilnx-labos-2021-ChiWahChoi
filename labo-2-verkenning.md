@@ -485,51 +485,65 @@ Maak in de directory `linux/` twee tekstbestanden aan, met naam `tekst1a` en `te
 
 5. Hoe zie je aan de uitvoer van `ls` dat `tekst1b` een harde link is en `tekst2b` een symbolische? Tip: Vergelijk met de uitvoer uit vraag 1!
 
-    **Antwoord**: ...
+    **Antwoord**: De aanduiding "->" bij de laatste kolom (tekst2b -> tekst2a) duidt een symbolische link aan.
 
 6. Verwijder de oorspronkelijke bestanden, `tekst1a` en `tekst2a`. Maak het commando zo kort mogelijk!
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost linux]$ rm tekst[1-2]a
+    UITVOER: /
     ```
 
 7. Toon opnieuw de uitvoer van `ls -l tekst*`, en bekijk de inhoud van `tekst1b` en `tekst2b`. Wat valt je op?
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ ls -l tekst*
+    -rw-rw-r--. 1 chichoi chichoi 22 Nov  5 19:02 tekst1b
+    lrwxrwxrwx. 1 chichoi chichoi  7 Nov  5 19:09 tekst2b -> tekst2a
     ```
 
-    **Antwoord**: ...
+    **Antwoord**: Tekst2b staat in het rood en tekst2a staat rood gemarkeerd. Waarschijnlijk omdat de symbolische link het bestand niet kan vinden waaraan het gelinkt is.
 
 ### Bestanden archiveren
 
 1. Creëer in je home-directory een archief `linux.tar.bz2` van de directory `linux/` en alle inhoud.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ tar cjf linux.tar.bz2 linux/
+    UITVOER: /
     ```
 
 2. Verwijder nu volledig de directory `linux/`
 
     ```
-    $ COMMANDO
+    [chichoi@localhost ~]$ rm -r linux
     UITVOER
     ```
 
 3. Toon de inhoud van het archief zonder opnieuw uit te pakken
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ tar tjf linux.tar.bz2 
+    linux/
+    linux/file4
+    linux/filec
+    linux/file3
+    linux/file16
+    linux/f/
+    linux/f/g/
+    linux/f/g/i/
+    linux/f/g/file2
+    linux/f/g/file1
+    linux/f/j/
+    linux/f/j/file4
+    linux/f/j/i/
+    [...]
     ```
 
 4. Pak het archief opnieuw uit in je home-directory.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ tar xjf linux.tar.bz2 
+    UITVOER: /
     ```
 
