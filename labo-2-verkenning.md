@@ -162,13 +162,13 @@ Vul de tabel hieronder aan. In de linkerkolom vind je de namen van een directory
 
 | Directory                         | Inhoud                                                  |
 | :---                              | :---                                                    |
-| `/bin`, `/usr/bin`                | Uitvoerbare bestanden                                          |
+| `/bin`, `/usr/bin`                | Uitvoerbare bestanden                                   |
 | `/sbin`, `/usr/sbin`              | Uitvoerbare bestanden voor systeembeheertaken           |
 | `/var`                            | Variabele data                                          |
-| **`ANTWOORD`**                    | Tijdelijke bestanden                                    |
-| `/opt`, `/usr/local`              | **ANTWOORD**                                            |
-| **`ANTWOORD`**                    | Home-directory van de `root` gebruiker                  |
-| **`ANTWOORD`**                    | Home-directory van de gebruiker `student`               |
+| `/tmp`                            | Tijdelijke bestanden                                    |
+| `/opt`, `/usr/local`              | Software die geïnstalleerd werd buiten de packetmanager |
+| `/root`                           | Home-directory van de `root` gebruiker                  |
+| `/home/student`                   | Home-directory van de gebruiker `student`               |
 | **`ANTWOORD`**                    | De inhoud van de man-pages                              |
 | **`ANTWOORD`**                    | Andere documentatie                                     |
 | `/lib`, `/usr/lib`, `lib64`, enz. | **ANTWOORD**                                            |
