@@ -5,7 +5,7 @@
 1. Hoe vraag je op de command-line documentatie op voor het *commando* `passwd`?
 
     ```
-    $ man passwd
+    [chichoi@localhost ~]$ man passwd
     PASSWD(1)                       User utilities                       PASSWD(1)
 
     NAME
@@ -24,7 +24,7 @@
 2. Hoe vraag je documentatie op voor het *configuratiebestand* `/etc/passwd`?
 
     ```
-    $ man 5 passwd
+    [chichoi@localhost ~]$ man 5 passwd
     PASSWD(5)                  Linux Programmer's Manual                 PASSWD(5)
     
     NAME
@@ -41,7 +41,7 @@
 3. Hoe vraag je een lijst op van alle documentatie die de string `passwd` bevat?
 
     ```
-    $ apropos passwd OF man -k passwd
+    [chichoi@localhost ~]$ apropos passwd OF man -k passwd
     chgpasswd (8)        - update group passwords in batch mode
     chpasswd (8)         - update passwords in batch mode
     fgetpwent_r (3)      - get passwd file entry reentrantly
@@ -70,28 +70,28 @@
 1. Wat is de huidige datum en uur?
 
     ```
-    $ date +"%D %T"
+    [chichoi@localhost ~]$ date +"%D %T"
     11/05/20 17:55:28
     ```
 
 2. Wat is de huidige directory?
 
     ```
-    $ pwd
+    [chichoi@localhost ~]$ pwd
     /home/chichoi
     ```
 
 3. Toon de inhoud van de huidige directory. De uitvoer zou er ongeveer zo moeten uit zien:
 
     ```
-    $ ls
+    [chichoi@localhost ~]$ ls
     Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
     ```
 
 4. Toon de inhoud van de huidige directory, maar toon voor elk bestand meer informatie en ook "verborgen" bestanden.
 
     ```
-    $ ls -al
+    [chichoi@localhost ~]$ ls -al
     total 96
     drwx------. 14 student student 4096 Sep 24 09:14 .
     drwxr-xr-x.  3 root    root    4096 Sep 20 13:46 ..
@@ -110,7 +110,7 @@
 5. Toon de inhoud van de hoofddirectory van het Linux-systeem, ook vaak de root-directory genoemd. Geef een uitgebreide listing zoals in de vorige vraag, maar *zonder* verborgen bestanden.
 
     ```
-    $ ls -l /
+    [chichoi@localhost ~]$ ls -l /
     total 64
     lrwxrwxrwx.   1 root root     7 Jan 28  2020 bin -> usr/bin
     dr-xr-xr-x.   7 root root  4096 Sep 30 12:06 boot
@@ -146,7 +146,7 @@
 7. Hoe kan je commando's die je voordien uitgevoerd hebt terug ophalen (de "commandogeschiedenis")?
 
     ```
-    $ history
+    [chichoi@localhost ~]$ history
     1  man hier
     2  man builtins
     3  man 7 glo
@@ -193,28 +193,28 @@ In deze oefening leer je onderscheid maken tussen *relatieve* en *absolute paden
 1. Blijf in je home-directory en maak van hieruit een directory `tijdelijk/` aan onder `/tmp/`
 
     ```
-    $ mkdir /tmp/tijdelijk
+    [chichoi@localhost ~]$ mkdir /tmp/tijdelijk
     UITVOER: /
     ```
 
 2. Verwijder deze directory meteen
 
     ```
-    $ rmdir /tmp/tijdelijk
+    [chichoi@localhost ~]$ rmdir /tmp/tijdelijk
     UITVOER: /
     ```
 
 3. Maak onder je home-directory een submap aan met de naam `linux/`
 
     ```
-    $ mkdir linux
+    [chichoi@localhost ~]$ mkdir linux
     UITVOER: /
     ```
 
 4. Ga naar deze directory
 
     ```
-    $ cd linux/
+    [chichoi@localhost ~]$ cd linux/
     UITVOER: /
     ```
 
