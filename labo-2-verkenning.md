@@ -6,7 +6,19 @@
 
     ```
     $ man passwd
-    UITVOER
+    PASSWD(1)                       User utilities                       PASSWD(1)
+
+    NAME
+       passwd - update user's authentication tokens
+
+    SYNOPSIS
+       passwd  [-k]  [-l]  [-u  [-f]]  [-d] [-e] [-n mindays] [-x maxdays] [-w
+
+       warndays] [-i inactivedays] [-S] [--stdin] [-?] [--usage] [username]
+
+    DESCRIPTION
+       The passwd utility is used to update user's authentication token(s).
+       [...]
     ```
 
 2. Hoe vraag je documentatie op voor het *configuratiebestand* `/etc/passwd`?
@@ -68,8 +80,29 @@
 5. Toon de inhoud van de hoofddirectory van het Linux-systeem, ook vaak de root-directory genoemd. Geef een uitgebreide listing zoals in de vorige vraag, maar *zonder* verborgen bestanden.
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ ls -l /
+    total 64
+    lrwxrwxrwx.   1 root root     7 Jan 28  2020 bin -> usr/bin
+    dr-xr-xr-x.   7 root root  4096 Sep 30 12:06 boot
+    drwxr-xr-x.  21 root root  3980 Nov  5 13:57 dev
+    drwxr-xr-x. 147 root root 12288 Nov  5 15:22 etc
+    drwxr-xr-x.   4 root root  4096 Sep 23 11:49 home
+    lrwxrwxrwx.   1 root root     7 Jan 28  2020 lib -> usr/lib
+    lrwxrwxrwx.   1 root root     9 Jan 28  2020 lib64 -> usr/lib64
+    drwx------.   2 root root 16384 Apr 23  2020 lost+found
+    drwxr-xr-x.   2 root root  4096 Jan 28  2020 media
+    drwxr-xr-x.   2 root root  4096 Jan 28  2020 mnt
+    drwxr-xr-x.   2 root root  4096 Jan 28  2020 opt
+    dr-xr-xr-x. 300 root root     0 Nov  5 13:57 proc
+    dr-xr-x---.   4 root root  4096 Nov  5 15:21 root
+    drwxr-xr-x.  48 root root  1320 Nov  5 15:24 run
+    lrwxrwxrwx.   1 root root     8 Jan 28  2020 sbin -> usr/sbin
+    drwxr-xr-x.   2 root root  4096 Sep 30 12:04 srv
+    dr-xr-xr-x.  13 root root     0 Nov  5 13:57 sys
+    drwxrwxrwt.  19 root root   460 Nov  5 17:22 tmp
+    drwxr-xr-x.  12 root root  4096 Apr 23  2020 usr
+    drwxr-xr-x.  22 root root  4096 Apr 23  2020 var
+    -rw-------.   1 root root     0 Sep 30 10:38 VBox.log
     ```
 
 6. Wat betekenen volgende elementen van de uitvoer hierboven?
