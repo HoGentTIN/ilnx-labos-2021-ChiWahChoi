@@ -70,8 +70,8 @@
 1. Wat is de huidige datum en uur?
 
     ```
-    $ date
-    Thu 05 Nov 2020 05:21:41 PM CET
+    $ date +"%D %T"
+    11/05/20 17:55:28
     ```
 
 2. Wat is de huidige directory?
