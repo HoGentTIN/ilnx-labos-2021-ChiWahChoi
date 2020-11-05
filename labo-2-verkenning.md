@@ -408,43 +408,44 @@ Toon met `ls` telkens de gevraagde bestanden, niet meer en niet minder.
 1. Alle bestanden die beginnen met `file`
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost linux]$ ls file*
+    file1   file11  file13  file15  file17  file19  file3  file5  file7  file9  fileb  filed
+    file10  file12  file14  file16  file18  file2   file4  file6  file8  filea  filec
     ```
 
 2. Alle bestanden die beginnen met `file`, gevolgd door één letterteken (cijfer of letter)
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost linux]$ ls file[a-z0-9]
+    file1  file2  file3  file4  file5  file6  file7  file8  file9  filea  fileb  filec  filed
     ```
 
 3. Alle bestanden die beginnen met `file`, gevolgd door één letter, maar geen cijfer
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost linux]$ ls file[a-z]
+    filea  fileb  filec  filed
     ```
 
 4. Alle bestanden die beginnen met `file`, gevolgd door één cijfer, maar geen letter
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost linux]$ ls file[0-9]
+    file1  file2  file3  file4  file5  file6  file7  file8  file9
     ```
 
 5. De bestanden `file12` t/m `file16`
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost linux]$ ls file1[2-6]
+    file12  file13  file14  file15  file16
     ```
 
 6. Bestandern die beginnen met `file`, *niet* gevolgd door een `1`
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost linux]$ ls file[!1]
+    file2  file3  file4  file5  file6  file7  file8  file9  filea  fileb  filec  filed
     ```
 
 ### Links
