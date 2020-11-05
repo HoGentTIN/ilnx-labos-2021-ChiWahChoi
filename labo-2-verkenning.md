@@ -264,9 +264,10 @@ In deze oefening leer je onderscheid maken tussen *relatieve* en *absolute paden
 9. Maak met één commando deze directorystructuur aan. Het is de bedoeling de opdrachtregel zo kort mogelijk te maken, dus niet alle directories apart opgeven!
 
     ```
-    $ COMMANDO
-    UITVOER
-    $ tree
+    [chichoi@localhost linux] $ mkdir -p f/{g,h}/i
+    UITVOER: /
+    
+    [chichoi@localhost linux] $ tree
     .
     └── f
         ├── g
@@ -284,8 +285,8 @@ Behoud deze directorystructuur voor de volgende oefeningen over bestanden.
 1. Maak een leeg bestand aan met de naam `file1`
 
     ```
-    $ COMMANDO
-    UITVOER
+    $ touch file1
+    UITVOER: /
     ```
 
 2. Maak een *verborgen* bestand aan met de naam `hidden`. Verborgen betekent dat je het niet kan zien met een "gewone" `ls`, maar wel met de gepaste optie.
