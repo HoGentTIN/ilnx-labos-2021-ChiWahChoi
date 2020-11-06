@@ -284,7 +284,7 @@ Vele tekstbestanden zijn gestructureerd als tabellen, bv. CSV (comma-separated v
 6. Druk een lijst af van de gebruikers in `passwd` die Bash als shell hebben, samen met hun UID en home-directory. Sorteer op UID.
 
     ```
-    $ COMMANDO
+    [chichoi@localhost labo3]$ grep :/bin/bash$ passwd | cut -f1,3,6 -d:
     root:0:/root
     vagrant:1000:/home/vagrant
     student:1001:/home/student
