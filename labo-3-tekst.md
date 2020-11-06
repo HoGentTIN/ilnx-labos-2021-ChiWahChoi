@@ -31,55 +31,55 @@ Maak ook een bestand aan met de naam `autokentekens` met deze inhoud:
 1. Hoe start je Vi op om deze bestanden aan te maken?
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ vim [FILENAME]
+    UITVOER: VIM EDITOR
     ```
 
 2. Hoe ga je van *normal mode* naar *insert mode*? Geef verschillende manieren:
 
     | Invoegen vanaf                  | Commando |
     | :---                            | :---     |
-    | op de huidige cursorpositie     | `X`      |
-    | rechts van de cursor            | `X`      |
-    | begin van huidige regel         | `X`      |
-    | einde van huidige regel         | `X`      |
-    | regel toevoegen onder deze      | `X`      |
-    | regel toevoegen op huidige lijn | `X`      |
+    | op de huidige cursorpositie     | `i`      |
+    | rechts van de cursor            | `a`      |
+    | begin van huidige regel         | `I`      |
+    | einde van huidige regel         | `A`      |
+    | regel toevoegen onder deze      | `o`      |
+    | regel toevoegen op huidige lijn | `O`      |
 
 3. Hoe kopieer je vanuit *normal mode*?
 
     | Te kopiëren                              | Commando |
     | :---                                     | :---     |
-    | Huidige regel                            | `X`      |
-    | Huidige regel en die eronder             | `X`      |
-    | Het huidige woord                        | `X`      |
-    | Het huidige en de twee volgende woorden  | `X`      |
-    | Van de cursor tot het einde van de regel | `X`      |
-    | Tot het einde van de *zin*               | `X`      |
-    | Tot het einde van de *paragraaf*         | `X`      |
-    | Alle tekst tussen haakjes `(...)`        | `X`      |
+    | Huidige regel                            | `yy`      |
+    | Huidige regel en die eronder             | `2yy`      |
+    | Het huidige woord                        | `yw`      |
+    | Het huidige en de twee volgende woorden  | `3yw`      |
+    | Van de cursor tot het einde van de regel | `y$`      |
+    | Tot het einde van de *zin*               | `yis`      |
+    | Tot het einde van de *paragraaf*         | `yip`      |
+    | Alle tekst tussen haakjes `(...)`        | `y%`      |
 
 4. Hoe knip je tekst vanuit *normal* mode?
 
     | Te knippen                                  | Commando |
     | :---                                        | :---     |
-    | Huidige regel                               | `X`      |
-    | Huidige regel en die eronder                | `X`      |
-    | Het huidige woord                           | `X`      |
-    | Het huidige en de twee volgende woorden     | `X`      |
-    | Het letterteken op de positie van de cursor | `X`      |
-    | Van de cursor tot het einde van de regel    | `X`      |
-    | Tot het einde van de *zin*                  | `X`      |
-    | Tot het einde van de *paragraaf*            | `X`      |
-    | Alle tekst tussen haakjes `(...)`           | `X`      |
+    | Huidige regel                               | `dd`      |
+    | Huidige regel en die eronder                | `2dd`      |
+    | Het huidige woord                           | `dw`      |
+    | Het huidige en de twee volgende woorden     | `3dw`      |
+    | Het letterteken op de positie van de cursor | `x`      |
+    | Van de cursor tot het einde van de regel    | `d$`      |
+    | Tot het einde van de *zin*                  | `dis`      |
+    | Tot het einde van de *paragraaf*            | `dip`      |
+    | Alle tekst tussen haakjes `(...)`           | `d%`      |
 
 6. Hoe kan je gekopieerde/geknipte tekst plakken?
 
 
     | Tekst plakken          | Commando |
     | :---                   | :---     |
-    | Rechts/onder de cursur | `X`      |
-    | Op de cursur           | `X`      |
+    | Rechts/onder de cursur | `p`      |
+    | Op de cursur           | `P`      |
 
 De bedoeling van voorgaande oefening is om een idee te geven van hoe veelzijdig Vi is. Er zijn *veel* commando's, maar er zit een duidelijke logica in. Een voorbeeld is `ci{`: dit staat voor *Change inside braces*. Vim zal links en rechts van de cursor zoeken naar accolades, alle tekst ertussen verwijderen en naar insert mode gaan. Je kan in het commando de `{` vervangen door een ander teken zoals bv. `(`, `"`, `'`, `[`, `<`.
 
