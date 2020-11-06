@@ -185,16 +185,28 @@ Deze oefeningen gebeuren met `lorem.txt`
     ```
 
 3. Druk een lijst af van alle individuele woorden in `lorem.txt` (negeer hoofdletters), samen met het aantal keer dat elk woord voorkomt. De lijst is omgekeerd gesorteerd op aantal voorkomens, en dan alfabetisch geordend. Werk stap voor stap:
+
     - Maak eerst een lijst van woorden, m.a.w. druk `lorem.txt` af met elk woord op een aparte regel
-        `[chichoi@localhost labo3]$ cat lorem.txt | sed 's/\s/\n/g'`
+        ```
+        [chichoi@localhost labo3]$ cat lorem.txt | sed 's/\s/\n/g'
+        ```
     - Verwijder overblijvende leestekens (`,` en `.`) en lege regels
-         `[chichoi@localhost labo3]$ cat lorem.txt | sed 's/[,. ]//g'`
+        ```
+        [chichoi@localhost labo3]$ cat lorem.txt | sed 's/[,. ]//g'
+        ```
     - Sorteer de woorden (niet hoofdlettergevoelig)
-         `[chichoi@localhost labo3]$ cat lorem.txt | sort -f`
+        ```
+        [chichoi@localhost labo3]$ cat lorem.txt | sort -f
+        ```
     - Maak een lijst met voor elk woord het aantal keer dat het voorkomt
-         `[chichoi@localhost labo3]$ cat lorem.txt | uniq -ci`
+        ```
+        [chichoi@localhost labo3]$ cat lorem.txt | uniq -ci
+        ```
     - Sorteer op het aantal voorkomens en behoud de alfabetische sortering van de woorden
-         `[chichoi@localhost labo3]$ cat lorem.txt | sort -nr`
+        ```
+        [chichoi@localhost labo3]$ cat lorem.txt | sort -nr
+        ```
+        
     ```
     [chichoi@localhost labo3]$ cat lorem.txt | sed 's/\s/\n/g' | sed 's/[,. ]//g' | sort -f | uniq -ci | sort -nr
      11 sed 
