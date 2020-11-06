@@ -231,8 +231,8 @@ Vele tekstbestanden zijn gestructureerd als tabellen, bv. CSV (comma-separated v
 1. Schrijf in `users.txt` een gesorteerde lijst weg van gebruikers met een UID strikt groter dan 1000 (tip: gebruik hiervoor `awk`).
 
     ```
-    $ COMMANDO
-    $ cat users.txt
+    [chichoi@localhost labo3]$ awk -F ':' '$3 > 1000 {print $1}'  passwd | sort > user.txt
+    [chichoi@localhost labo3]$ cat users.txt
     roberts
     ryu
     sparrow
@@ -244,21 +244,22 @@ Vele tekstbestanden zijn gestructureerd als tabellen, bv. CSV (comma-separated v
 2. Tel het aantal gebruikers in `users.txt`
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost labo3]$ cat user.txt | wc -l
+    6
     ```
 
 3. Genereer voor elke gebruiker in `users.txt` een nieuw wachtwoord m.h.v. het commando `apg -n AANTAL` en schrijf deze weg in `newpass.txt`. Het aantal gebruikers in `users.txt` wordt berekend in de opdrachtregel.  Tip: gebruik "command substitution," notatie `$(commando)`. Dit zal het gegeven commando uitvoeren en de uitdrukking `$(...)` vervangen door de uitvoer (stdout) ervan.
 
     ```
-    $ COMMANDO
+    [chichoi@localhost labo3]$ apg -n $(wc -l user.txt) > newpass.txt
     ```
 
 4. Maak een tekstbestand `newusers.txt` met daarin de lijst van gebruikers uit `users.txt` en hun overeenkomstige wachtwoord uit `newpass.txt`, gescheiden door een TAB, vb:
 
     ```
-    $ COMMANDO
-    $ cat newusers.txt
+    [chichoi@localhost labo3]$ paste user.txt newpass.txt > newusers.txt
+    
+    [chichoi@localhost labo3]$ cat newusers.txt
     roberts hewpopIrb6
     ryu     vicNimEp
     sparrow whowlash4
@@ -270,7 +271,7 @@ Vele tekstbestanden zijn gestructureerd als tabellen, bv. CSV (comma-separated v
 5. Converteer `newusers.txt` naar een CSV-bestand `newusers.csv` waar de inhoud van elke kolom omgeven is door dubbele aanhalingstekens en gescheiden door een kommapunt.
 
     ```
-    $ COMMANDO
+    [chichoi@localhost labo3]$ awk '  {printf("\"%s\";\"%s\"\n", $1, $2)} ' newusers.txt > newusers.csv
     $ cat newusers.csv
     "roberts";"hewpopIrb6"
     "ryu";"vicNimEp"
@@ -297,3 +298,6 @@ Vele tekstbestanden zijn gestructureerd als tabellen, bv. CSV (comma-separated v
 ## Gebruikte bronnen
 
 Vul hier aan welke interessante informatiebronnen je tegengekomen bent.
+https://www.gnu.org/software/sed/manual/sed.html
+https://www.geeksforgeeks.org/awk-command-unixlinux-examples/
+https://vim.fandom.com/wiki/Copy,_cut_and_paste#:~:text=There%20are%20two%20approaches%20to,register%20identified%20by%20the%20character.
