@@ -92,14 +92,14 @@ In onderstaande vragen is het telkens de bedoeling één commando te geven om de
 1. Voeg het bestand `landen` en `autokentekens` samen met het commando `join` (zoek de werking ervan op met het man-commando). Het resultaat wordt opgeslagen in het bestand `landenkentekens`.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ join landen autokentekens > landenkentekens
+    UITVOER: /
     ```
 
 2. Bekijk de inhoud van `landenkentekens` en controleer of het overeenkomt met de uitvoer hieronder.
 
     ```
-    $ COMMANDO
+    [chichoi@localhost ~]$ cat landenkentekens 
     1 België B
     2 Frankrijk F
     3 Zwitserland CH
@@ -110,14 +110,14 @@ In onderstaande vragen is het telkens de bedoeling één commando te geven om de
 3. Haal uit `landenkentekens` alleen kolom 2 en kolom 3 eruit en sla dit resultaat op als `landenkentekens2`.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ cut -d' ' -f2,3 landenkentekens > landenkentekens2
+    UITVOER: /
     ```
 
 4. Controleer of de inhoud van `landenkentekens2` overeenkomt met de uitvoer hieronder.
 
     ```
-    $ COMMANDO
+    [chichoi@localhost ~]$ cat landenkentekens2
     België B
     Frankrijk F
     Zwitserland CH
@@ -128,16 +128,20 @@ In onderstaande vragen is het telkens de bedoeling één commando te geven om de
 5. Voeg vanop de command-line Italië en Spanje toe aan het einde van `landenkentekens2` met hun respectievelijke kentekens. Je mag hier voor elk land een apart commando gebruiken.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ echo Spanje E >> landenkentekens2
+    UITVOER: /
+    
+    [chichoi@localhost ~]$ echo Italië I >> landenkentekens2
+    UITVOER: /
     ```
 
 6. Sorteer `landenkentekens2` alfabetisch op de autokentekens. Sla het bekomen resultaat op in `gesorteerdeautokentekens`. Controleer het resultaat.
 
     ```
-    $ COMMANDO
-    UITVOER
-    $ COMMANDO
+    [chichoi@localhost ~]$ sort -k2 landenkentekens2 > gesorteerdeautokentekens
+    UITVOER: /
+    
+    [chichoi@localhost ~]$ cat gesorteerdeautokentekens
     België B
     Zwitserland CH
     Duitsland D
