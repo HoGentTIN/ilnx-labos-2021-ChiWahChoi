@@ -218,31 +218,36 @@ Tussen de vragen is ruimte voorzien om je antwoorden in te vullen. Het gaat telk
     - Controleer of je in de “thuismap” bent van deze gebruiker. Maak onder deze map een bestand `test` aan door middel van het commando `touch`.
 
         ```
-        $ COMMANDO
-        UITVOER
+        [carol@localhost ~]$ pwd
+        /home/carol
+        
+        [carol@localhost ~]$ touch test
+        UITVOER: /
         ```
 
     - Probeer nu als gebruiker `carol` je te verplaatsen naar de “thuismap” van `alice`.
 
         ```
-        $ COMMANDO
-        UITVOER
+        [carol@localhost ~]$ cd /home/alice
+        -bash: cd: /home/alice: Permission denied
+
+
         ```
 
     - Kan je de inhoud van de mappen binnen de thuismap van `alice` bekijken?
 
         ```
-        $ COMMANDO
-        UITVOER
+        [carol@localhost ~]$ ls /home/alice
+        ls: cannot open directory '/home/alice': Permission denied
         ```
 
     - Probeer nu als `carol` onder de “thuismap” van `alice` ook een bestand `test` te maken. Lukt dit? Kan je dit verklaren?
 
         ```
-        $ COMMANDO
-        UITVOER
+        [carol@localhost ~]$ touch /home/alice/test
+        touch: cannot touch '/home/alice/test': Permission denied
         ```
-
+        **De gebruiker 'carol' heeft geen rechten van die directory (van alice)"
 ## Algemene permissies
 
 Geef in de volgende oefeningen telkens het commando dat nodig is om de taak uit te voeren en ook het resultaat.
