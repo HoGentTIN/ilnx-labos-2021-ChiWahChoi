@@ -583,3 +583,5 @@ https://www.tecmint.com/how-to-find-files-with-suid-and-sgid-permissions-in-linu
 https://askubuntu.com/questions/835657/copy-file-to-current-directory
 
 https://linuxconfig.org/how-to-use-special-permissions-the-setuid-setgid-and-sticky-bits
+
+https://superuser.com/questions/102253/how-to-make-files-created-in-a-directory-owned-by-directory-group
