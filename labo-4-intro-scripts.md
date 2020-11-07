@@ -75,20 +75,20 @@ Geef zoals gewoonlijk het commando om de opgegeven taak uit te voeren en control
 
     ***Antwoord: Variabele "pinguin" is nu een omgevingsvariabele (environment variable) ***
     
-3. Zoek de inhoud op van volgende shellvariabelen en vul volgende tabel aan:
+3. Zoek de inhoud op van volgende shellvariabelen (m.b.v. ```echo $[VARIABELE]``` en vul volgende tabel aan:
 
     | Variabele  | Waarde |
     | :---       | :---   |
-    | `PATH`     |        |
-    | `HISTSIZE` |        |
-    | `UID`      |        |
-    | `HOME`     |        |
-    | `HOSTNAME` |        |
-    | `LANG`     |        |
-    | `USER`     |        |
-    | `OSTYPE`   |        |
-    | `PWD`      |        |
-    | `MANPATH`  |        |
+    | `PATH`     |/home/chichoi/.local/bin:/home/chichoi/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin|
+    | `HISTSIZE` |1000        |
+    | `UID`      |1000        |
+    | `HOME`     |/home/chichoi|
+    | `HOSTNAME` |localhost.localdomain|
+    | `LANG`     |en_US.UTF-8µ        |
+    | `USER`     |chichoi        |
+    | `OSTYPE`   |linux-gnu        |
+    | `PWD`      |/home/chichoi        |
+    | `MANPATH`  |/        | #met commando  "manpath" vind ik uitvoer: /usr/local/share/man:/usr/share/man
 
 
 ## Gebruikte bronnen
