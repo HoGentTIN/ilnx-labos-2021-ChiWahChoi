@@ -441,7 +441,7 @@ cat: vanmij: Permission denied
     ----rwSr-t. 1 chichoi chichoi 158 Nov  7 21:45 hosts
     ```
     
-    **Verklaring alice: Aangezien alice geen toegeang heeft tot "/home/" kan ze nooit toegang krijgen tot "/chichoi/"**
+    **Verklaring alice: Aangezien alice geen toegang heeft tot "/home/" kan ze nooit toegang krijgen tot "/chichoi/"**
 
 ## Eigenaars en groepseigenaars veranderen
 
