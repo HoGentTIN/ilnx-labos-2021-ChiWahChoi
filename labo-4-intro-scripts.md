@@ -40,17 +40,17 @@ Geef zoals gewoonlijk het commando om de opgegeven taak uit te voeren en control
     [chichoi@localhost ~]$ echo $pinguin
     UITVOER: [LEEG]
     ```
-    ***Dit lukt niet***
+    **Antwoord: Dit lukt niet** 
     
     6. De verklaring hiervoor ligt in het type variabele. Welke soort variabele is PINGUIN en hoe kan je dit controleren? Keer hiervoor terug naar je oorspronkelijke bashshell
     ```
     [chichoi@localhost ~]$ exit
     exit
     
-    [chichoi@localhost ~]$ ??? #Hoe kan ik contreleren welk type mijn variabele "pinguin" is?
+    [chichoi@localhost ~]$ ??? #Hoe kan ik controleren welk type mijn variabele "pinguin" is?
     UITVOER:
     ```
-    ***pinguin is momenteel een lokale variabele (local variable)***
+    **Antwoord: Variabele "pinguin" is momenteel een lokale variabele (local variable)**
     
     7. Zorg er nu voor dat de inhoud van PINGUIN ook in elke nieuwe subshell kan gelezen worden? Hoe doe je dit? Schrijf het gebruikte commando neer.
     ```
@@ -65,7 +65,7 @@ Geef zoals gewoonlijk het commando om de opgegeven taak uit te voeren en control
     [chichoi@localhost ~]$ echo $pinguin
     Tux
     ```
-    ***Variabele "pinguin" is nu een omgevingsvariabele (environmental variable) ***
+    ***Antwoord: Variabele "pinguin" is nu een omgevingsvariabele (environmental variable) ***
     
 3. Zoek de inhoud op van volgende shellvariabelen en vul volgende tabel aan:
 
