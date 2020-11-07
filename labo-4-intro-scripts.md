@@ -88,7 +88,7 @@ Geef zoals gewoonlijk het commando om de opgegeven taak uit te voeren en control
     | `USER`     |chichoi        |
     | `OSTYPE`   |linux-gnu        |
     | `PWD`      |/home/chichoi        |
-    | `MANPATH`  |/ (zie onderaan)| 
+    | `MANPATH`  |(zie onderaan)| 
     
     Dit is geen shellvariabele maar een commando. Met commando  "manpath" vind ik uitvoer: /usr/local/share/man:/usr/share/man   
 
