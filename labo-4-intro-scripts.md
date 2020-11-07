@@ -47,8 +47,12 @@ Geef zoals gewoonlijk het commando om de opgegeven taak uit te voeren en control
     [chichoi@localhost ~]$ exit
     exit
     
-    [chichoi@localhost ~]$ ??? #Hoe kan ik controleren welk type mijn variabele "pinguin" is?
-    UITVOER:
+    [chichoi@localhost ~]$ set | grep pinguin       #set geeft mij een lijst van alle shell variabelen (shell variables)
+    pinguin=Tux                                     #Mijn variabele "pinguin" zit in deze lijst
+    
+    [chichoi@localhost ~]$ env | grep pinguin       #env  geeft mij een lijst van alle omgevingsvariabelen (environment variables)
+    UITVOER: /                                      #Mijn variabele "pinguin" zit niet in de lijst
+
     ```
     **Antwoord: Variabele "pinguin" is momenteel een lokale variabele (local variable)**
     
@@ -64,8 +68,12 @@ Geef zoals gewoonlijk het commando om de opgegeven taak uit te voeren en control
     
     [chichoi@localhost ~]$ echo $pinguin
     Tux
+    
+    [chichoi@localhost ~]$ env | grep pinguin       #env geeft mij een lijst van alle omgevingsvariabelen. (environment variables)
+    pinguin=Tux                                     #Mijn variabele "pinguin" zit in deze lijst.
     ```
-    ***Antwoord: Variabele "pinguin" is nu een omgevingsvariabele (environmental variable) ***
+
+    ***Antwoord: Variabele "pinguin" is nu een omgevingsvariabele (environment variable) ***
     
 3. Zoek de inhoud op van volgende shellvariabelen en vul volgende tabel aan:
 
