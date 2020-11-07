@@ -41,6 +41,7 @@ Geef zoals gewoonlijk het commando om de opgegeven taak uit te voeren en control
     UITVOER: [LEEG]
     ```
     ***Dit lukt niet***
+    
     6. De verklaring hiervoor ligt in het type variabele. Welke soort variabele is PINGUIN en hoe kan je dit controleren? Keer hiervoor terug naar je oorspronkelijke bashshell
     ```
     [chichoi@localhost ~]$ exit
@@ -50,6 +51,7 @@ Geef zoals gewoonlijk het commando om de opgegeven taak uit te voeren en control
     UITVOER:
     ```
     ***pinguin is momenteel een lokale variabele (local variable)***
+    
     7. Zorg er nu voor dat de inhoud van PINGUIN ook in elke nieuwe subshell kan gelezen worden? Hoe doe je dit? Schrijf het gebruikte commando neer.
     ```
     [chichoi@localhost ~]$ export pinguin
@@ -64,6 +66,7 @@ Geef zoals gewoonlijk het commando om de opgegeven taak uit te voeren en control
     Tux
     ```
     ***Variabele "pinguin" is nu een omgevingsvariabele (environmental variable) ***
+    
 3. Zoek de inhoud op van volgende shellvariabelen en vul volgende tabel aan:
 
     | Variabele  | Waarde |
