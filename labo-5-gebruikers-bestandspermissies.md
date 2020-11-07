@@ -522,3 +522,9 @@ Kopieer als je eigen gebruiker (niet als root!) nu opnieuw het bestand `/etc/hos
     ```
 
 ## Gebruikte bronnen
+
+https://serverfault.com/questions/27317/linux-use-su-but-keep-the-current-directory
+
+https://www.howtogeek.com/437958/how-to-use-the-chmod-command-on-linux/
+
+https://www.tecmint.com/how-to-find-files-with-suid-and-sgid-permissions-in-linux/
