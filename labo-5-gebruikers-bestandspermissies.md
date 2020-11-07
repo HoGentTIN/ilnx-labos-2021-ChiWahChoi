@@ -368,67 +368,80 @@ Geef in de volgende oefeningen telkens het commando dat nodig is om de taak uit 
 1. Ga naar de directory `oefenenMetPermissies`, als gewone gebruiker (dus niet als `root`) en kopieer het bestand `/etc/hosts` daar naartoe.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost oefenenMetPermissies]$ cp /etc/hosts .
+    UITVOER: /
     ```
 
 2. Verander nu de permissies van het bestand `hosts` in directory `oefenenMetPermissies` als volgt: SGID aan, `rx` voor *others*, `rw` voor *group* en geen permissies voor de eigenaar (merk op dat deze combinatie van permissies geen praktisch nut heeft!). Geef het gebruikte commando en ook het commando om te controleren of de permissies juist ingesteld zijn.
 
     ```
-    $ COMMANDO
-    UITVOER
+    -rw-r--r--. 1 chichoi chichoi 158 Nov  7 21:34 hosts         #BEFORE
+    
+    [chichoi@localhost oefenenMetPermissies]$ chmod 2065 hosts
+    [chichoi@localhost oefenenMetPermissies]$ ls -l hosts   
+    ----rwSr-x. 1 chichoi chichoi 158 Nov  7 21:34 hosts
     ```
 
 3. Kan de eigenaar nu het bestand bekijken? Waarom wel of niet? Noteer hoe je dit controleert:
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost oefenenMetPermissies]$ cat hosts
+    cat: hosts: Permission denied
     ```
+    **Antwoord: Nee, geen read rechten.**
 
 4. Kan de eigenaar de permissies wijzigen? Controleer.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost oefenenMetPermissies]$ chmod u=rwx hosts
+    [chichoi@localhost oefenenMetPermissies]$ ls -l hosts
+    -rwxrwSr-x. 1 chichoi chichoi 158 Nov  7 21:34 hosts
     ```
 
 5. Kan de eigenaar het bestand verwijderen? Controleer.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost oefenenMetPermissies]$ rm hosts
     ```
 
 Kopieer als je eigen gebruiker (niet als root!) nu opnieuw het bestand `/etc/hosts` in het directory `oefenenMetPermissies` en pas de permissies opnieuw aan zoals eerder voorgeschreven. Zorg dat gebruiker `alice` lid is van de groep die groepseigenaar is van het bestand `hosts` in directory `oefenenMetPermissies`. Switch nu naar gebruiker alice.
+    
+    [chichoi@localhost ~]$ sudo usermod -aG chichoi alice
+    [chichoi@localhost oefenenMetPermissies]$ su alice
 
+cat: vanmij: Permission denied
+    
+    
 1. Kan alice nu het bestand bekijken? Controleer.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [alice@localhost oefenenMetPermissies]$ cat vanmij
+    cat: vanmij: Permission denied
     ```
 
 2. Kan alice de permissies wijzigen? Controleer.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [alice@localhost oefenenMetPermissies]$ chmod 2777 hosts
+    chmod: cannot access 'hosts': Permission denied
     ```
 
 3. Kan alice het bestand verwijderen? Is dit de bedoeling? Controleer.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [alice@localhost oefenenMetPermissies]$ rm hosts
+    rm: cannot remove 'hosts': Permission denied
     ```
 
 4. Stel nu de sticky-bit in op het directory oefenenMetPermissies. Geef het geschikte commando en controleer het resultaat.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost oefenenMetPermissies]$ chmod +t hosts
+    [chichoi@localhost oefenenMetPermissies]$ ls -l hosts   
+    ----rwSr-t. 1 chichoi chichoi 158 Nov  7 21:45 hosts
     ```
+    
+    **Verklaring alice: Aangezien alice geen toegeang heeft tot "/home/" kan ze nooit toegang krijgen tot "/chichoi/"**
 
 ## Eigenaars en groepseigenaars veranderen
 
@@ -528,3 +541,5 @@ https://serverfault.com/questions/27317/linux-use-su-but-keep-the-current-direct
 https://www.howtogeek.com/437958/how-to-use-the-chmod-command-on-linux/
 
 https://www.tecmint.com/how-to-find-files-with-suid-and-sgid-permissions-in-linux/
+
+https://askubuntu.com/questions/835657/copy-file-to-current-directory
