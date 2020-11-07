@@ -300,5 +300,7 @@ Vele tekstbestanden zijn gestructureerd als tabellen, bv. CSV (comma-separated v
 Vul hier aan welke interessante informatiebronnen je tegengekomen bent.
 
 https://www.gnu.org/software/sed/manual/sed.html
+
 https://www.geeksforgeeks.org/awk-command-unixlinux-examples/
+
 https://vim.fandom.com/wiki/Copy,_cut_and_paste#:~:text=There%20are%20two%20approaches%20to,register%20identified%20by%20the%20character.
