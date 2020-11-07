@@ -436,9 +436,9 @@ cat: vanmij: Permission denied
 4. Stel nu de sticky-bit in op het directory oefenenMetPermissies. Geef het geschikte commando en controleer het resultaat.
 
     ```
-    [chichoi@localhost oefenenMetPermissies]$ chmod +t hosts
-    [chichoi@localhost oefenenMetPermissies]$ ls -l hosts   
-    ----rwSr-t. 1 chichoi chichoi 158 Nov  7 21:45 hosts
+    [chichoi@localhost oefenenMetPermissies]$ chmod +t .
+    [chichoi@localhost oefenenMetPermissies]$ ls -ld 
+    drwx-----T. 2 chichoi chichoi 4096 Nov  7 21:45 .
     ```
     
     **Verklaring alice: Aangezien alice geen toegang heeft tot "/home/" kan ze nooit toegang krijgen tot "/chichoi/"**
