@@ -255,25 +255,35 @@ Geef in de volgende oefeningen telkens het commando dat nodig is om de taak uit 
 1. Log in als gewone gebruiker. Wat is de waarde van umask?
 
     ```
-    $ COMMANDO
-    UITVOER
+    umask
+    0002
     ```
 
 2. Maak een directory `oefenenMetPermissies` aan. Welke octale permissies verwacht je voor deze nieuwe directory?
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ mkdir oefenenMetPermissies/
+    UITVOER: /
     ```
+    **Antwoord: Permissies : 777 (standaard directory permissies) - 002 (umask) = 775**
 
 3. Controleer dit door de *symbolische* permissies op te vragen.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ ls -l | grep oefenenMetPermissies
+    drwxrwxr-x. 2 chichoi chichoi 4096 Nov  7 20:36 oefenenMetPermissies
     ```
 
 4. Controleer of de symbolische waarden en octale waarden overeen komen!
+    ```
+    drwxrwxr-x.
+    d = directory
+    rwx = 7
+    rwx = 7
+    r-x = 5
+    = 775
+    ```
+    **Antwoord: De symbolische waarden en octale waarden komen overeen.**
 5. Stel nu de umask waarde zo in dat niemand permissies heeft op de bestanden en directories die je aanmaakt, behalve jijzelf.
 
     ```
