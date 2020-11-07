@@ -313,45 +313,54 @@ Geef in de volgende oefeningen telkens het commando dat nodig is om de taak uit 
 7. Verander nu de permissies van het bestand `vanmij` zodat je zelf het bestand kan uitvoeren. Geef het gebruikte commando (op de octale manier) en test het resultaat.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ chmod 744 oefenenMetPermissies/vanmij
+    UITVOER: /
     ```
 
 8. Log in als de gebruiker `alice` (als je deze niet meer hebt, maak je die aan en voorzie de gebruiker van een eenvoudig paswoord), maar zorg dat je niet verandert van directory. Kan `alice` het bestand `vanmij` uitvoeren? Verklaar!
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ su alice
+    Password: 
+    
+    [alice@localhost chichoi]$ ./vanmij
+    bash: ./vanmij: Permission denied
     ```
+    **Alleen de u(USER) heeft de x permissie gekregen, de groepen of andere gebruiker hebben deze rechten niet.**
 
 9. Verander nu de permissies van het bestand vanmij zodat iedereen het bestand kan uitvoeren. Geef het gebruikte commando (op de symbolische manier) en test het resultaat.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ chmod g+x,o+x oefenenMetPermissies/vanmij    #Symbolische notatie
+    [chichoi@localhost ~]$ chmod 755 oefenenMetPermissies/vanmij        #Octale notatie
+    [chichoi@localhost ~]$ su alice
+    Password: 
+    [alice@localhost chichoi]$ ./vanmij
+    bash: ./vanmij: Permission denied
     ```
+    **Antwoord: Dit lukt nog steeds niet omdat de directory geen permission geeft aan groepen en andere gebruikers.**
 
 ## Geavanceerde permissies
 
 1. Zoek alle bestanden in het systeem waar de SUID-permissie op ingesteld staat. Schrijf het resultaat in een bestand met de naam `suidBestanden. Schrijf de fouten weg naar een `foutenBestand`. Doe dit in één commandolijn. (Tip: gebruik het commando `find` en zoek in de manpages naar de geschikte opties).
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ find / -perm -4000 > suidbestanden 2> foutenBestan
+    UITVOER: /
     ```
 
 2. Controleer het resultaat door een bestand te nemen uit `suidBestanden` en de permissies op te vragen van dat bestand.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ ls -l /usr/bin/mount
+    -rwsr-xr-x. 1 root root 58560 May 20 17:16 /usr/bin/mount
     ```
 
 3. Check of het programmabestand `/usr/bin/passwd` in het bestand `suidBestanden` aanwezig is. Schrijf het gebruikte commando op. Is het aanwezig?
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ grep bin/passwd suidbestanden 
+    /usr/bin/passwd
     ```
 
 ## Geavanceerde permissies: setGID en de *sticky bit*
