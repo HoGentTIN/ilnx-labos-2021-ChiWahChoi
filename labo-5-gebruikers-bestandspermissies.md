@@ -181,36 +181,38 @@ Tussen de vragen is ruimte voorzien om je antwoorden in te vullen. Het gaat telk
     - Gebruiker `daniel` gaat een tijdje niet meer sporten. Zorg er voor dat deze gebruiker tot nader order geen toegang meer kan hebben tot het systeem (zonder het wachtwoord of de gebruiker te verwijderen!).
 
         ```
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# usermod -L daniel
+        UITVOER: /
         ```
 
     - Hoe kan je controleren dat `daniel` inderdaad geen toegang meer heeft tot het systeem? In welk bestand kan dat en hoe zie je daar dan dat het account afgesloten is?
 
         ```
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# cat /etc/shadow | grep daniel
+        daniel:!$6$BJ59/NxX6xaarwJy$of/xckjGhztCSYFsw1l9rTPoOldXR42KbdMVLGmtlOTb24NpBnwq.FRryrAzwZQzmLxzU1erOSZIaq8SN921S1:18573:0:99999:7:::
         ```
+        
+        **Antwoord: net na [USER]: staat een uitroepteken (!) dit geeft aan dat dit account gelocked is.**
 
     - Gebruiker `daniel` komt terug naar de sportclub. Geef hem opnieuw toegang tot het systeem.
 
         ```
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# usermod -U daniel
+        UITVOER: /
         ```
 
     - Gebruiker `eva` stopt helemaal met sporten. Verwijder deze gebruiker, maar doe dit zorgvuldig: zorg er in het bijzonder voor dat ook haar homedirectory verwijderd wordt.
 
         ```
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# userdel -r eva
+        UITVOER: /
         ```
 
 7. Log aan als de gebruiker `carol`
 
     ```
-    $ COMMANDO
-    UITVOER
+    [root@localhost ~]# su - carol
+    UITVOER: /
     ```
 
     - Controleer of je in de “thuismap” bent van deze gebruiker. Maak onder deze map een bestand `test` aan door middel van het commando `touch`.
