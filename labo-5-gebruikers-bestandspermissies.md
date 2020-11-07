@@ -543,3 +543,5 @@ https://www.howtogeek.com/437958/how-to-use-the-chmod-command-on-linux/
 https://www.tecmint.com/how-to-find-files-with-suid-and-sgid-permissions-in-linux/
 
 https://askubuntu.com/questions/835657/copy-file-to-current-directory
+
+https://linuxconfig.org/how-to-use-special-permissions-the-setuid-setgid-and-sticky-bits
