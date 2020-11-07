@@ -448,9 +448,22 @@ cat: vanmij: Permission denied
 1. Maak als `root` onder `/srv/` twee directories aan met de naam `groep/verkoop` en `groep/inkoop`. Maak ook 2 groepen aan met de namen `verkoop` en `inkoop`. Maak twee gebruikers aan, `margriet` met primaire groep `verkoop` en `roza`, die als primaire groep `inkoop` heeft. Zorg dat de groepen eigenaar zijn van de overeenkomstige directories en dat `margriet` eigenaar is van directory `verkoop` en `roza` van het directory `inkoop`. Geef de gebruikte commando’s en controleer:
 
     ```
-    # COMMANDO
-    UITVOER
-    ...
+    [chichoi@localhost ~]$ sudo -i
+    [root@localhost /]# mkdir -p srv/groep/{verkoop,inkoop}
+    [root@localhost /]# groupadd verkoop
+    [root@localhost /]# groupadd inkoop
+    [root@localhost /]# useradd -g verkoop margriet
+    [root@localhost /]# useradd -g inkoop roza
+    [root@localhost srv]# chown roza:inkoop groep/inkoop
+    [root@localhost srv]# chown margriet:verkoop groep/verkoop
+    [root@localhost srv]# ls -l groep/
+    total 8
+    drwxr-xr-x. 2 roza     inkoop  4096 Nov  7 22:41 inkoop
+    drwxr-xr-x. 2 margriet verkoop 4096 Nov  7 22:41 verkoop
+    ```
+
+    **GEGEVEN: Commando + uitvoer voorbeeld
+    ```
     # ls -l groep/
     total 0
     drwxr-xr-x. 2 roza     inkoop  6 Sep 22 22:23 inkoop
@@ -460,79 +473,104 @@ cat: vanmij: Permission denied
 2. Zorg ervoor dat gebruikers en groepen uit de vorige stap alle permissies hebben. Geef het geschikte commando en controleer.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [root@localhost srv]# chmod 775 groep/inkoop
+    [root@localhost srv]# chmod 775 groep/verkoop
+    [root@localhost srv]# ls -l groep/
+    total 8
+    drwxrwxr-x. 2 roza     inkoop  4096 Nov  7 22:41 inkoop
+    drwxrwxr-x. 2 margriet verkoop 4096 Nov  7 22:41 verkoop
     ```
 
 3. Voeg een gebruiker, vb `alice`, toe aan de groep `inkoop` en `verkoop` en controleer. Geen van beide groepen zijn primair.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [root@localhost srv]# usermod  -aG verkoop,inkoop  alice
+    [root@localhost srv]# cat  /etc/group | grep alice
+    verkoop:x:1005:alice
+    inkoop:x:1006:alice
     ```
 
 4. Log in als `alice` en ga naar de directory verkoop. Laat de gebruiker hier een leeg bestand, `bestand1`, aanmaken in de directory verkoop. (Indien je hier problemen ondervindt, log dan in via een andere terminalvenster).
 
     ```
-    $ COMMANDO
-    UITVOER
+    [root@localhost srv]# su alice
+    [alice@localhost srv]$ cd groep/verkoop/
+    [alice@localhost verkoop]$ touch bestand1
+    UITVOER: /
     ```
 
 5. Wie is nu eigenaar van `bestand1` en wie de groepseigenaar?
 
     ```
-    $ COMMANDO
-    UITVOER
+    [alice@localhost verkoop]$ ls -l
+    total 0
+    -rw-r--r--. 1 alice sporten 0 Nov  7 23:04 bestand1
     ```
 
 6. Zorg er nu voor dat de groepseigenaar van de directory `verkoop` automatisch de groepseigenaar wordt van alle bestanden en directories die onder `verkoop` gemaakt worden. Geef de gebruikte commando’s.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [root@localhost srv]# chmod g+s groep/verkoop/
+    UITVOER: /
     ```
 
 7. Doe hetzelfde voor de directory `inkoop`. Geef de gebruikte commando’s:
 
     ```
-    $ COMMANDO
-    UITVOER
+    [root@localhost srv]# chmod g+s groep/inkoop/
+    UITVOER: /
     ```
 
 8. Verander opnieuw naar gebruiker `alice` en laat deze gebruiker een leeg `bestand2` aanmaken in de directory `verkoop`. Geef de gebruikte commando’s:
 
     ```
-    $ COMMANDO
-    UITVOER
+    [root@localhost srv]# su alice
+    [alice@localhost srv]$ cd groep/verkoop/
+    [alice@localhost verkoop]$ touch bestand2
+    UITVOER: /
     ```
 
 9. Wie is nu eigenaar van `bestand2` en wie groepseigenaar?
 
     ```
-    $ COMMANDO
-    UITVOER
+    [alice@localhost verkoop]$ ls -l | grep bestand2
+    -rw-r--r--. 1 alice verkoop 0 Nov  7 23:17 bestand2
     ```
+    
+    **Antwoord: De eigennaar is alice en de groepseigenaar is verkoop**
 
 10. Laat nu gebruiker `margriet` een leeg bestand `bestand3` aanmaken. Controleer de eigenaar van `bestand3` en de groepseigenaar.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [root@localhost srv]# su margriet
+    [margriet@localhost srv]$ touch groep/verkoop/bestand3
     ```
 
 11. Laat nu gebruiker `alice` `bestand3` verwijderen. Lukt dit?
 
     ```
-    $ COMMANDO
-    UITVOER
+    [alice@localhost verkoop]$ rm bestand3
+    rm: remove write-protected regular empty file 'bestand3'? y
     ```
 
 12. Zorg er nu voor dat de gebruikers elkaars bestanden niet kunnen verwijderen. Als de gebruiker echter eigenaar is van het betreffende directory mag dit wel. Leg uit hoe je dit doet en controleer. Schrijf je gevolgde procedure op.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [root@localhost srv]# chmod +t groep/verkoop/
+    [root@localhost srv]# chmod +t groep/inkoop/
+    
+    [root@localhost srv]# su margriet
+    [margriet@localhost srv]$ touch groep/verkoop/bestand5
+    
+    [margriet@localhost srv]$ exit
+    exit
+    
+    [root@localhost srv]# su alice
+    [alice@localhost srv]$ rm groep/verkoop/bestand5
+    rm: remove write-protected regular empty file 'groep/verkoop/bestand5'? y
+    rm: cannot remove 'groep/verkoop/bestand5': Operation not permitted
     ```
+    **Antwoord: Een bestand mag alleen verwijderd worden door de eigenaar van het bestand.**
 
 ## Gebruikte bronnen
 
