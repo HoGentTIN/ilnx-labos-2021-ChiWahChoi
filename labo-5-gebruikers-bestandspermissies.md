@@ -83,89 +83,99 @@ Tussen de vragen is ruimte voorzien om je antwoorden in te vullen. Het gaat telk
 
         ```
         [root@localhost ~]# cat /etc/group
-
         ```
 
     - In welk configuratiebestand vind je de *wachtwoorden* van alle gebruikers?
 
         ```
-        /PAD/NAAR/BESTAND
+        [root@localhost ~]# cat /etc/shadow
         ```
 
 5. Gebruikersgroepen aanmaken
     - Maak een groep aan met de naam `sporten`
 
         ```
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# groupadd sporten
+        UITVOER: /
         ```
 
     - In welk configuratiebestand vind je het GID van deze groep terug?
 
         ```
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# cat /etc/group
+        UITVOER: /
         ```
 
     - Wat zal het GID zijn van de groepen `zwemmen` en `judo` als je deze nu onmiddellijk zou aanmaken? Maak ze aan en controleer!
 
         ```
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# groupadd zwemmen
+        UITVOER: /
+        
+        [root@localhost ~]# groupadd judo
+        UITVOER: /
         ```
+        **Antwoord: zwemmen(1003), judo(1004)**
 
     - Voeg de gebruiker `alice` toe aan de groepen `sporten` en `zwemmen`
 
         ```
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# usermod -aG sporten,zwemmen alice
+        UITVOER: /
         ```
 
     - Log in als `alice` door in een terminal het commando `su - alice` (let op de spaties!) uit te voeren
 
         ```
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# su - alice
+        UITVOER: /
         ```
 
     - Zorg er nu voor dat de groep `sporten` de primaire groep wordt van `alice`.
 
         ```
-        $ COMMANDO
-        UITVOER
+        [alice@localhost ~]$ sudo usermod -g sporten alice
+        [sudo] password for alice: 
+        alice is not in the sudoers file.  This incident will be reported.
         ```
-
+        **Alleen de root-gebruiker kan de primaire groep veranderen? Of je moet alice eerst in de sudoer file steken zodat je sudo kunt oproepen (Door haar in groep 10(wheel) te steken.**
     - Zorg er voor dat `alice` uitgelogd is, ga terug naar `root`
 
         ```
-        $ COMMANDO
-        UITVOER
+        [alice@localhost ~]$ exit
+        logout
         ```
 
 6. Maak nu de gebruikers in onderstaande tabel aan. Zorg er voor dat ze al meteen bij aanmaken tot de aangegeven groepen behoren. Kies zelf geschikte wachtwoorden voor deze gebruikers en vergeet ze niet (vul eventueel een kolom toe aan de tabel).
 
-    | Gebruikersnaam | Primaire groep | Secundaire groep |
-    | :---           | :---           | :---             |
-    | `bob`          | `sporten`      | `judo`           |
-    | `carol`        | `sporten`      | `zwemmen`        |
-    | `daniel`       | `sporten`      | `judo`           |
-    | `eva`          | `sporten`      | `zwemmen`        |
+    | Gebruikersnaam | Primaire groep | Secundaire groep | Wachtwoord   |
+    | :---           | :---           | :---             | :---         |
+    | `bob`          | `sporten`      | `judo`           | ikbenbob     |
+    | `carol`        | `sporten`      | `zwemmen`        | ikbencarol   |
+    | `daniel`       | `sporten`      | `judo`           | ikbendaniel  |
+    | `eva`          | `sporten`      | `zwemmen`        | ikbeneva     |
 
     - Geef de gebruikte commando's om de gebruikers aan te maken en ook om te verifiëren of dit correct gebeurd is:
 
         ```
-        $ COMMANDO
-        UITVOER
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# useradd -g sporten -G judo bob
+        UITVOER: /
+        
+        [root@localhost ~]# passwd  bob             #ikbenbob
+        BAD PASSWORD: The password fails the dictionary check - it is based on a dictionary word
+        Retype new password: 
+        passwd: all authentication tokens updated successfully.
+        
+        [root@localhost ~]# id bob
+        uid=1002(bob) gid=1002(sporten) groups=1002(sporten),1004(judo)
         ...
         ```
 
     - Verwijder nu de *groep* `alice` en controleer.
 
         ```
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# groupdel alice
+        UITVOER: /
         ```
 
     - Gebruiker `daniel` gaat een tijdje niet meer sporten. Zorg er voor dat deze gebruiker tot nader order geen toegang meer kan hebben tot het systeem (zonder het wachtwoord of de gebruiker te verwijderen!).
