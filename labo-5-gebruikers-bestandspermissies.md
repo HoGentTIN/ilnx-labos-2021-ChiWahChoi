@@ -15,72 +15,75 @@ Tussen de vragen is ruimte voorzien om je antwoorden in te vullen. Het gaat telk
     - Wat is het commando om de huidige directory op te vragen? Welke uitvoer toont het commando?
 
         ```
-        $ COMMANDO
-        UITVOER
+        [chichoi@localhost ~]$ pwd
+        /home/chichoi
         ```
 
     - Wat is het UID van deze gebruiker?
 
         ```
-        $ COMMANDO
-        UITVOER
+        [chichoi@localhost ~]$ id -u chichoi OF [chichoi@localhost ~]$ echo $UID  
+        1000
         ```
 
     - Wat is het GID van deze gebruiker?
 
         ```
-        $ COMMANDO
-        UITVOER
+        [chichoi@localhost ~]$ id -g chichoi
+        1000
         ```
 
-2. Log in als de `root`-gebruiker met het commando `su -` (let op de spatie!)
+2. Log in als de `root`-gebruiker met het commando `su -` (let op de spatie!) (Werkte niet voor mij, ik gebruikte `sudo -i`)
     - Wat is de home-directory van `root`?
 
         ```
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# pwd
+        /root
         ```
 
     - Wat is het UID van deze gebruiker?
 
         ```
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# id -u root
+        0
         ```
 
     - Wat is het GID van deze gebruiker?
 
         ```
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# id -g root
+        0
         ```
 
 3. Maak een nieuwe gebruiker aan met de naam `alice`, zonder specifieke opties
     - Geef het gebruikte commando:
 
         ```
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# useradd alice
+        UITVOER: /
         ```
 
-    - Voorzie een geschikt wachtwoord voor deze gebruiker (en vergeet het niet! Noteer het eventueel hier in je verslag of in de beschrijving van je VM)
+    - Voorzie een geschikt wachtwoord voor deze gebruiker (en vergeet het niet! Noteer het eventueel hier in je verslag of in de beschrijving van je VM) [lolio1234]
 
         ```
-        $ COMMANDO
-        UITVOER
+        [root@localhost ~]# passwd alice
+        New password: [INVOER]
+        Retype new password: [INVOER]
+        passwd: all authentication tokens updated successfully.
         ```
 
 4. Configuratiebestanden voor gebruikersbeheer:
     - In welk bestand kan je de UID, gebruikersnaam, homedirectory, enz. van alle gebruikers terugvinden?
 
         ```
-        /PAD/NAAR/BESTAND
+        [root@localhost ~]# cat /etc/passwd
         ```
 
     - In welk configuratiebestand kan je al de bestaande gebruikersgroepen nakijken, en ook de gebruikers die lid zijn van elke groep?
 
         ```
-        /PAD/NAAR/BESTAND
+        [root@localhost ~]# cat /etc/group
+
         ```
 
     - In welk configuratiebestand vind je de *wachtwoorden* van alle gebruikers?
