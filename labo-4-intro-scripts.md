@@ -89,3 +89,14 @@ Geef zoals gewoonlijk het commando om de opgegeven taak uit te voeren en control
     | `OSTYPE`   |        |
     | `PWD`      |        |
     | `MANPATH`  |        |
+
+
+## Gebruikte bronnen
+
+Vul hier aan welke interessante informatiebronnen je tegengekomen bent.
+
+https://linuxize.com/post/how-to-set-and-list-environment-variables-in-linux/
+
+https://www.digitalocean.com/community/tutorials/how-to-read-and-set-environmental-and-shell-variables-on-a-linux-vps
+
+https://www.cyberciti.biz/faq/linux-list-all-environment-variables-env-command/
