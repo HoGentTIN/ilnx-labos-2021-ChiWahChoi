@@ -287,16 +287,28 @@ Geef in de volgende oefeningen telkens het commando dat nodig is om de taak uit 
 5. Stel nu de umask waarde zo in dat niemand permissies heeft op de bestanden en directories die je aanmaakt, behalve jijzelf.
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ chmod 700 oefenenMetPermissies/
+    [chichoi@localhost ~]$ ls -l | grep oefenenMetPermissies
+    drwx------. 2 chichoi chichoi 4096 Nov  7 20:36 oefenenMetPermissies
     ```
 
 6. Maak nu een bestand aan met de naam `vanmij`, in de directory `oefenenMetPermissies` met als inhoud de tekst: `echo "Waarschuwing: eigendom van ${USER}!"` Schrijf neer hoe je dit bestand gemaakt hebt. Controleer de permissies; schrijf ze neer en was dit wat je verwachtte? Verklaar!
 
     ```
-    $ COMMANDO
-    UITVOER
+    [chichoi@localhost ~]$ echo "Waarschuwing: eigendom van ${USER}!" > oefenenMetPermissies/vanmij
+    UITVOER:/
+    
+    [chichoi@localhost ~]$ ls -l oefenenMetPermissies/
+    -rw-rw-r--. 1 chichoi chichoi 36 Nov  7 20:55 vanmij
     ```
+    
+    ```
+    -   = file
+    rw- = 6
+    rw  = 6
+    r-- = 4
+    ```
+    **Antwoord: Permissies : 666 (standaard file permissies) - 002 (umask) = 664**
 
 7. Verander nu de permissies van het bestand `vanmij` zodat je zelf het bestand kan uitvoeren. Geef het gebruikte commando (op de octale manier) en test het resultaat.
 
