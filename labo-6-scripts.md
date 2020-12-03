@@ -44,6 +44,22 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
     Geen argumenten opgegeven!
     $ echo $?
     1
+    
+    [chichoi@localhost labo6]$ cat onderelkaar.sh 
+    #! /+bin/bash -eu
+    # set -o errexit
+    # set -o nounset
+    set -o pipefall
+    
+    if [ "$#" -eq "0" ]; then
+     echo "Geen argumenten opgegeven!"
+     exit 1
+    fi
+    
+    while [ "$#" -gt 0 ]; do
+     echo "$1"
+     shift
+    done
     ```
 
 2. Schrijf een script `gebruikerslijst.sh` dat een gesorteerde lijst van users (uit `/etc/passwd`) weergeeft op het scherm. Maak gebruik van het het commando `cut`.
