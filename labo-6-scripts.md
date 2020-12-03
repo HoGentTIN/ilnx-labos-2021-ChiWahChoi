@@ -46,7 +46,7 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
     1
     
     [chichoi@localhost labo6]$ cat onderelkaar.sh 
-    #! /+bin/bash -eu
+    #! /bin/bash -eu
     # set -o errexit
     # set -o nounset
     set -o pipefall
