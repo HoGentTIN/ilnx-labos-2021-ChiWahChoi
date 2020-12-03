@@ -4,11 +4,11 @@ In deze repository vind je de labo-oefeningen voor Besturingssystemen/Linux van 
 
 ## Gegevens student
 
-- Naam: 
-- Klasgroep: 
-- Naam van je lector: Nathalie Declercq / Andy Van Maele / Bert Van Vreckem (schrap wat niet past)
-- Github gebruikersnaam: [GEBRUIKER](https://github.com/GEBRUIKER)
-- URL naar je Github-repository: <https://github.com/HoGentTIN/ilnx-GEBRUIKER>
+- Naam: Chi Choi
+- Klasgroep: 2A3
+- Naam van je lector: Nathalie Declercq / Andy Van Maele / Bert Van Vreckem (schrap wat niet past) --> Thomas Pollet / Angelo Lebon
+- Github gebruikersnaam: ChiWahChoi (https://github.com/ChiWahChoi)
+- URL naar je Github-repository: https://github.com/HoGentTIN/ilnx-labos-2021-ChiWahChoi
 
 ## Verslagen bijhouden
 
