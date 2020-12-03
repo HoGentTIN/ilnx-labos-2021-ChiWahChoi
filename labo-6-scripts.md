@@ -64,6 +64,7 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
 
 2. Schrijf een script `gebruikerslijst.sh` dat een gesorteerde lijst van users (uit `/etc/passwd`) weergeeft op het scherm. Maak gebruik van het het commando `cut`.
     ```
+    [chichoi@localhost labo6]$ cat gebruikerslijst.sh 
     #! /bin/bash -eu
  
     set -o pipefail
