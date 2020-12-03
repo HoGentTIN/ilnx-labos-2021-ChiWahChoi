@@ -164,6 +164,7 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
      exit 1
     else
      echo "Het script zal de inhoud van bestand $1 sorteren en de laatste ${2-"20"} regels tonen"
+     sort $1 | tail -n ${2-"20"}
     fi
     ```
 8. Dit script moet testen of een bestand (opvragen aan gebruiker) bestaat en uitvoerbaar is, indien niet, moet het uitvoerbaar gemaakt worden.
