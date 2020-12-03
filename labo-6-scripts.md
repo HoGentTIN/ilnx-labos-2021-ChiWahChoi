@@ -129,6 +129,28 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
     chmod +x $bestandsnaam
     ```
 6. Dit script zal een bestand kopiëren. Bron en doel worden aan de gebruiker gevraagd. Test of het doelbestand bestaat. Indien wel, wordt het script afgebroken.  (opm. geen unit tests)
+    ```
+    [chichoi@localhost labo6]$ cat oefening6.sh 
+    #! /bin/bash
+    
+    set -o errexit
+    set -o nounset
+    set -o pipefail
+    
+    echo "Dit script zal een bestand kopiëren"
+    echo -n "Bron: "
+    read bron
+    echo -n "Doel: "
+    read doel
+    
+    if [ -e "$doel" ]; then
+     echo "Mislukt"
+     exit 1
+    else
+     cp $bron $doel
+   	 echo "Gelukt"
+    fi
+    ```
 7. Sorteer de inhoud van een bestand (arg1) en toon de laatste regels (aantal regels = arg2). Indien argument 1 ontbreekt, melding geven en afbreken. Indien argument 2 ontbreekt neemt men 20 als default waarde. Om te testen maak je een bestand aan met alle letters van het alfabet, in de volgorde van je toetsenbord. (opm. geen unit tests)
 8. Dit script moet testen of een bestand (opvragen aan gebruiker) bestaat en uitvoerbaar is, indien niet, moet het uitvoerbaar gemaakt worden.
 9. Dit script maakt gebruik van het cal (kalender commando). De gebruiker wordt verplicht om de drie eerste letters van de maand (jan-feb-maa-apr-mei-jun-jul-aug-sep-okt-nov-dec) in te geven. Geef foutmelding indien geen correcte maand wordt ingegeven en stop het script. De gebruiker kan ook het jaartal ingeven (niet verplicht). Indien niet ingegeven wordt het huidige jaar gebruikt
