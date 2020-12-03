@@ -72,6 +72,28 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
     cut -d':' /etc/passwd -f1 | sort
     ```
 3. Schrijf een script `elf-params.sh` dat werkt zoals `onderelkaar.sh`, maar maximaal 11 parameters afdrukt. Extra parameters worden genegeerd.  Positionele parameters en `shift` zijn een tip.
+    ```
+    [chichoi@localhost labo6]$ cat elf-params.sh 
+    #! /bin/bash -eu
+    
+    set -o errexit
+    set -o nounset
+    set -o pipefail
+    
+    counter=1
+    max=11
+    
+    if [ ${#} -eq 0 ]; then
+     exit 1
+    fi
+    
+    while [ "${counter}" -le ${max} ]; do
+     echo "${1}"
+     (counter+=1))
+     shift
+    done
+    exit 0
+    ```
 4. Schrijf een script `datum.sh` dat het aantal elementen van het commando `date` weergeeft en daarna al de elementen onder elkaar. Maak gebruik van positionele parameters en het `set` commando. Gebruik ook een `while`-lus.
 5. Vraag aan de gebruiker van dit script een naam voor een bestand, schrijf dit vervolgens weg en zorg ervoor dat het bestand uitvoerbaar is. (opm. geen unit tests)
 6. Dit script zal een bestand kopiëren. Bron en doel worden aan de gebruiker gevraagd. Test of het doelbestand bestaat. Indien wel, wordt het script afgebroken.  (opm. geen unit tests)
