@@ -42,6 +42,54 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
         - er meer dan twee parameters gegeven werden
         - WORDS niet bestaat of niet leesbaar is
     - Tip: met het commando `shuf` kan je de volgorde van lijnen tekst door elkaar schudden.
+    ```
+    #! /bin/bash
+    
+    set -o nounset
+    set -o errexit
+    set -o pipefail
+    
+    amount=4
+    list=/usr/share/dict/words
+    
+    usage() {
+    cat << _EOF_Usage:
+    passphrase - create a strong password following the xkcd method
+    SYNOPSIS
+    passphrase OPTION... [#WORDS] [FILE, DEFAULT=/usr/share/dict/words]...
+    _EOF_
+    }
+    
+    if [ ${#} -gt 2  ]; then
+     echo "Expected at most 2 arguments, got $#" >&2
+     exit 2
+    fi
+    
+    while [ "$#" -gt 0 ]; do
+          case "${1}" in
+               h|--help|-?)
+                           usage
+                           exit 0
+                           ;;
+               [0-9]*)
+                           amount="${1}"
+                           ;;
+               *)
+                           if [ ! -f "${1}"] || [ ! -r "${1}" ]; then
+                              echo "${1} is not a readable file!" >&2
+                              usage
+                              exit 2
+                           fi
+                           list="${1}"
+               ;;
+          esac
+    shift
+    done
+    
+    shuf --head-count "${amount}" "${list}" | tr '\n' ' '
+    printf '\n'
+
+
 2. Schrijf een script om een backup te maken van de gegeven directory, meer bepaald een Tar-archief gecomprimeerd met bzip2.
     - Het archief krijgt als naam DIRECTORY-TIMESTAMP.tar.bzip2 met:
         - DIRECTORY = de naam van de directory waarvan je een backup maakt
