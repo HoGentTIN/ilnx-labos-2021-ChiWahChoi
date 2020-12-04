@@ -81,15 +81,14 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
                               exit 2
                            fi
                            list="${1}"
-               ;;
+                           ;;
           esac
     shift
     done
     
     shuf --head-count "${amount}" "${list}" | tr '\n' ' '
     printf '\n'
-
-
+    ```
 2. Schrijf een script om een backup te maken van de gegeven directory, meer bepaald een Tar-archief gecomprimeerd met bzip2.
     - Het archief krijgt als naam DIRECTORY-TIMESTAMP.tar.bzip2 met:
         - DIRECTORY = de naam van de directory waarvan je een backup maakt
