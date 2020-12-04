@@ -188,15 +188,7 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
     ```
 
 9. Dit script maakt gebruik van het cal (kalender commando). De gebruiker wordt verplicht om de drie eerste letters van de maand (jan-feb-maa-apr-mei-jun-jul-aug-sep-okt-nov-dec) in te geven. Geef foutmelding indien geen correcte maand wordt ingegeven en stop het script. De gebruiker kan ook het jaartal ingeven (niet verplicht). Indien niet ingegeven wordt het huidige jaar gebruikt
-10. Schrijf een script `passphrase.sh` dat een willekeurige wachtwoordzin genereert zoals gesuggereerd door <http://xkcd.com/936/>. Gebruik een woordenlijst zoals `/usr/share/dict/words` (moet je mogelijks installeren). Opties en argumenten:
-    - `passphrase.sh [-h|-?|--help]`: druk uitleg over het commando af en sluit af met exit-status 0. Eventuele andere opties en argumenten worden genegeerd.
-    - `passphrase.sh [N] [WORDS]`
-        - N = het aantal woorden in de wachtwoordzin (standaardwaarde = 4)
-        - WORDS = het bestand dat de te gebruiken woordenlijst bevat (standaardwaarde = `/usr/share/dict/words`)
-    - Sluit af met een passende foutboodschap (op stderr!) en exit-status als:
-        - er meer dan twee parameters gegeven werden
-        - WORDS niet bestaat of niet leesbaar is
-    - Tip: met het commando `shuf` kan je de volgorde van lijnen tekst door elkaar schudden.
+10. Schrijf een script `passphrase.sh` --> ZIE LABO 8
 11. Schrijf een script om een backup te maken van de gegeven directory, meer bepaald een Tar-archief gecomprimeerd met bzip2.
     - Het archief krijgt als naam DIRECTORY-TIMESTAMP.tar.bzip2 met:
         - DIRECTORY = de naam van de directory waarvan je een backup maakt
