@@ -188,21 +188,8 @@ De unit tests van de oefeningen worden in volgorde uitgevoerd. Zolang er nog fou
     ```
 
 9. Dit script maakt gebruik van het cal (kalender commando). De gebruiker wordt verplicht om de drie eerste letters van de maand (jan-feb-maa-apr-mei-jun-jul-aug-sep-okt-nov-dec) in te geven. Geef foutmelding indien geen correcte maand wordt ingegeven en stop het script. De gebruiker kan ook het jaartal ingeven (niet verplicht). Indien niet ingegeven wordt het huidige jaar gebruikt
-10. Schrijf een script `passphrase.sh` --> ZIE LABO 8
-11. Schrijf een script om een backup te maken van de gegeven directory, meer bepaald een Tar-archief gecomprimeerd met bzip2.
-    - Het archief krijgt als naam DIRECTORY-TIMESTAMP.tar.bzip2 met:
-        - DIRECTORY = de naam van de directory waarvan je een backup maakt
-        - TIMESTAMP = de huidige datum/tijd in het formaat JJJJMMDDUUMM
-        - vb. “student-201312021825.tar.bzip2” voor directory /home/student
-    - Er wordt in dezelfde directory als het archief een log weggeschreven naar een bestand backup-TIMESTAMP.log van de uitvoer (zowel stdout als stderr) van het tar-commando.
-    - Gebruik: `backup.sh [OPTIES] [DIR]`
-    - Opties en argumenten:
-        - `-h|-?|--help`: druk uitleg over het commando af en sluit af met exit-status 0. Eventuele andere opties en argumenten worden genegeerd.
-        - `-d|--destination DIR`: de directory waar de backup naartoe geschreven moet worden. Standaardwaarde is `/tmp`
-        - `DIR` de directory waarvan er een backup gemaakt moet worden. Standaardwaarde is de home-directory van de huidige gebruiker.
-    - Sluit af met een passende foutboodschap (op stderr!) en exit-status als:
-        - er teveel argumenten gegeven worden
-        - de directory waarvan een backup gemaakt moet worden niet bestaat
-        - de directory waar de backup naartoe geschreven moet worden niet bestaat
+    ```
+    [chichoi@localhost labo6]$ cat oefening9.sh 
+    ```
 
 ## Gebruikte bronnen
